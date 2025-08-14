@@ -1,8 +1,17 @@
-import React from 'react'
+import { CustomJumbotron } from '@/components/custom/CustomJumbotron'
+import { HeroStats } from '@/heroes/components/HeroStats'
 
 export const SearchPage = () => {
   return (
-    <div>SearchPage</div>
+    <>
+      <CustomJumbotron
+        title="Search Heroes"
+        description="Find your favorite superheroes and villains quickly and easily"
+      />
+
+      <HeroStats />
+      
+    </>
   )
 }
 

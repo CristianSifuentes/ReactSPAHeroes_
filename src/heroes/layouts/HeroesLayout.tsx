@@ -1,26 +1,12 @@
-import { Link, Outlet } from "react-router"
+import {  Outlet } from "react-router"
 
 export const HeroesLayout = () => {
   return (
-    <div className="bg-red-100 p-4">
-        <ul>
-          
-           <li>
-            <Link to="/heroes">Home</Link>
-          </li>
-          <li>
-            <Link to="/heroes/:id">Hero</Link>
-            </li>
-          <li>
-            <Link to="/heroes/search">Search</Link>
-          </li>
-          <li>
-            <Link to="/admin">Admin</Link>
-          </li>
-        </ul>
-        <section className="mt-10">
-          <Outlet></Outlet>
-        </section>
-    </div>
+
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50">
+        <div className="max-w-7xl mx-auto p-6">
+        <Outlet />
+        </div>
+      </div>
   )
 }

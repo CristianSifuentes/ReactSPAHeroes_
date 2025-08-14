@@ -78,3 +78,6 @@ https://lovable.dev/
 https://bolt.new/
 
 https://reactrouter.com/
+
+
+ <!-- npx shadcn@latest add  -->

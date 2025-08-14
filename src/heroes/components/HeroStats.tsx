@@ -10,7 +10,7 @@ export const HeroStats = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
           
 
-          <HeroStatCard
+        <HeroStatCard
             title="Total Characters"
             icon={<Users className="h-4 w-4 text-muted-foreground" />}
           >
@@ -23,7 +23,7 @@ export const HeroStats = () => {
                 2 Villains
               </Badge>
             </div>
-          </HeroStatCard>
+        </HeroStatCard>
 
         <HeroStatCard
             title="Favoritos"

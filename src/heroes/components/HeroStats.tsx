@@ -8,7 +8,6 @@ export const HeroStats = () => {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
           
-
           <HeroStatCard
               title="Total Characters"
               icon={<Users className="h-4 w-4 text-muted-foreground" />}
@@ -47,6 +46,7 @@ export const HeroStats = () => {
               <div className="text-lg font-bold">Batman</div>
               <p className="text-xs text-muted-foreground">Intelligence: 10/10</p>
           </HeroStatCard>
+
         </div>
 
     

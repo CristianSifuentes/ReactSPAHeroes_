@@ -79,5 +79,5 @@ https://bolt.new/
 
 https://reactrouter.com/
 
-
+https://www.halo-lab.com/blog/dashboard-design-examples
  <!-- npx shadcn@latest add  -->

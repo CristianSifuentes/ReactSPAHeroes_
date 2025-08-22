@@ -70,3 +70,14 @@ export default tseslint.config([
 
 https://ui.shadcn.com/
 https://ui.shadcn.com/docs/installation/vite
+
+https://v0.dev/
+
+https://lovable.dev/
+
+https://bolt.new/
+
+https://reactrouter.com/
+
+https://www.halo-lab.com/blog/dashboard-design-examples
+ <!-- npx shadcn@latest add  -->

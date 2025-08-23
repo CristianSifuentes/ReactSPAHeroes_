@@ -26,9 +26,10 @@ import { CustomJumbotron } from "@/components/custom/CustomJumbotron"
 import { HeroStats } from "@/heroes/components/HeroStats"
 import { SearchControls } from "../search/ui/SearchControls"
 import { HeroGrid } from "@/heroes/components/HeroGrid"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { CustomPagination } from "@/components/custom/CustomPagination"
 import { CustomBreadcrumbs } from "@/components/custom/CustomBreadcrumbs"
+import { getHeroesByPage } from "@/heroes/actions/get-heroes-by-page.action"
 // import img from "next/img"
 
 export const HomePage = () => {
@@ -36,6 +37,14 @@ export const HomePage = () => {
   const [activeTab, setActiveTab] = useState<
     'all' | 'favorites' | 'heroes' | 'villains'
   >('all');
+
+
+  useEffect(() => {  
+
+    getHeroesByPage().then((heroes) => {
+      console.log(heroes);
+    });
+  }, []);
 
 
 

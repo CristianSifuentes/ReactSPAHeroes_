@@ -26,10 +26,12 @@ import { CustomJumbotron } from "@/components/custom/CustomJumbotron"
 import { HeroStats } from "@/heroes/components/HeroStats"
 import { SearchControls } from "../search/ui/SearchControls"
 import { HeroGrid } from "@/heroes/components/HeroGrid"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { CustomPagination } from "@/components/custom/CustomPagination"
 import { CustomBreadcrumbs } from "@/components/custom/CustomBreadcrumbs"
-import { getHeroesByPage } from "@/heroes/actions/get-heroes-by-page.action"
+import { getHeroesByPageAction } from "@/heroes/actions/get-heroes-by-page.action"
+import { useQuery } from "@tanstack/react-query"
+
 // import img from "next/img"
 
 export const HomePage = () => {
@@ -39,12 +41,19 @@ export const HomePage = () => {
   >('all');
 
 
-  useEffect(() => {  
+  // useEffect(() => {  
 
-    getHeroesByPage().then((heroes) => {
-      console.log(heroes);
-    });
-  }, []);
+  //   getHeroesByPage().then();
+
+  // }, []);
+
+  const { data: heroesResponse } = useQuery({
+    queryKey: ['heroes'],
+    queryFn: () => getHeroesByPageAction(),
+    staleTime: 1000 * 60 * 5, // 5 minutes
+  });
+
+  console.log({ heroesResponse });
 
 
 
@@ -80,12 +89,12 @@ export const HomePage = () => {
           <TabsContent value="all">
             <h1>All Characters</h1>
             {/* Show all characters */}
-            <HeroGrid />
+            <HeroGrid heroes={heroesResponse?.heroes ?? []} />
           </TabsContent>
           <TabsContent value="favorites">
             {/* Show favorite characters */}
             <h1>Favorites</h1>
-            <HeroGrid />
+            <HeroGrid heroes={heroesResponse?.heroes.filter(hero => hero.isFavorite)} />
           </TabsContent>
           <TabsContent value="heroes">
             {/* Show hero characters */}

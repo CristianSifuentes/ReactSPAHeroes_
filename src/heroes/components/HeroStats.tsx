@@ -6,15 +6,13 @@ import { getSummaryAction } from '../actions/get-summary.action'
 import { useHeroSummary } from '@/heroes/hooks/useHeroSummary'
 
 export const HeroStats = () => {
+  const { data: summary } = useHeroSummary();
 
   // const { data: summary } = useQuery({
   //   queryKey: ['summary-information'],
   //   queryFn: () => getSummaryAction(),
   //   staleTime: 1000 * 60 * 5, // 5 minutes
   // });
-
-  const { data: summary } = useHeroSummary();
-
 
   return (
     <>
@@ -49,12 +47,12 @@ export const HeroStats = () => {
               icon={<Zap className="h-4 w-4 text-muted-foreground" />}
           >
               <div className="text-lg font-bold">{ summary?.strongestHero.alias }</div>
-              <p className="text-xs text-muted-foreground">Strength: {summary?.strongestHero.strength}/10</p>
+              <p className="text-xs text-muted-foreground">Strength: {summary?.strongestHero.strength}</p>
           </HeroStatCard>
           
           <HeroStatCard
               title="Inteligente"
-              icon={<Zap className="h-4 w-4 text-muted-foreground" />}
+              icon={<Heart className="h-4 w-4 text-muted-foreground" />}
             >
               <div className="text-lg font-bold">{summary?.smartestHero.alias}</div>
               <p className="text-xs text-muted-foreground">Intelligence: {summary?.smartestHero.intelligence}/10</p>

@@ -1,4 +1,4 @@
-import { heroApi } from "../pages/api/hero.api";
+import { heroApi } from "../api/hero.api";
 import type { SummaryInformationResponse } from "../types/summary-information.response";
 
 

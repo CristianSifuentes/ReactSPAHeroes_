@@ -1,6 +1,6 @@
 import { off } from "process";
-import { heroApi } from "../pages/api/hero.api";
-import type { HerosResponse } from "../types/get-heros.response";
+import { heroApi } from "../api/hero.api";
+import type { HerosResponse } from "../types/get-heroes.response";
 
 
 const BASE_URL = import.meta.env.VITE_API_URL;

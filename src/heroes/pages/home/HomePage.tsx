@@ -37,7 +37,7 @@ import { CustomBreadcrumbs } from "@/components/custom/CustomBreadcrumbs"
 // import { getSummaryAction } from "@/heroes/actions/get-summary.action"
 // import { s } from "node_modules/react-router/dist/development/components-CuPfnyiZ.d.mts"
 import { useHeroSummary } from "@/heroes/hooks/useHeroSummary"
-import { usePaginationHero } from "@/heroes/hooks/usePaginationHero"
+import { usePaginatedHero } from "@/heroes/hooks/usePaginatedHero"
 
 // import img from "next/img"
 
@@ -49,7 +49,7 @@ export const HomePage = () => {
   const activeTab = searchParams.get('tab') ?? 'all';
   const page = searchParams.get('page') ?? '1';
   const limit = searchParams.get('limit') ?? '6';
-  const category = searchParams.get('category') ?? 'aa';
+  const category = searchParams.get('category') ?? 'all';
 
 
 
@@ -93,7 +93,7 @@ export const HomePage = () => {
   //   staleTime: 1000 * 60 * 5, // 5 minutes
   // });
 
-  const { data: heroesResponse } = usePaginationHero(+page, +limit);
+  const { data: heroesResponse } = usePaginatedHero(+page, +limit);
 
   const { data: summary } = useHeroSummary();
 

@@ -6,7 +6,7 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 const queryClient = new QueryClient()
 
 
-export const HerosApp = () => {
+export const HeroesApp = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <RouterProvider router={appRouter} />

@@ -124,12 +124,31 @@ export const HomePage = () => {
         {/* Tabs */}
         <Tabs value={selectedTab} className="mb-8">
           <TabsList className="grid w-full grid-cols-4">
-            <TabsTrigger value="all" onClick={() => setSearchParams((prev) => ({ ...prev, tab: 'all' }))}>All Characters ({summary?.totalHeroes})</TabsTrigger>
-            <TabsTrigger value="favorites" className="flex items-center gap-2" onClick={() => setSearchParams((prev) => ({ ...prev, tab: 'favorites' }))}>
-              {/* Favorites ({summary?.totalFavorites ?? 0}) */}
+            <TabsTrigger 
+                value="all" 
+                onClick={() => 
+                setSearchParams((prev) => ({ ...prev, tab: 'all' }))}>
+                  All Characters ({summary?.totalHeroes})
             </TabsTrigger>
-            <TabsTrigger value="heroes" onClick={() => setSearchParams((prev) => ({ ...prev, tab: 'heroes' }))}>Heroes ({summary?.heroCount ?? 0})</TabsTrigger>
-            <TabsTrigger value="villains" onClick={() => setSearchParams((prev) => ({ ...prev, tab: 'villains' }))}>Villains ({summary?.villainCount ?? 0})</TabsTrigger>
+            <TabsTrigger 
+                value="favorites" 
+                className="flex items-center gap-2" 
+                onClick={() => 
+                setSearchParams((prev) => ({ ...prev, tab: 'favorites' }))}>
+                 Favorites ({3}) 
+            </TabsTrigger>
+            <TabsTrigger 
+                value="heroes" 
+                onClick={() => 
+                setSearchParams((prev) => ({ ...prev, tab: 'heroes' }))}>
+                  Heroes ({summary?.heroCount ?? 0})
+            </TabsTrigger>
+            <TabsTrigger 
+                value="villains" 
+                onClick={() => 
+                setSearchParams((prev) => ({ ...prev, tab: 'villains' }))}>
+                  Villains ({summary?.villainCount ?? 0})
+            </TabsTrigger>
           </TabsList>
           <TabsContent value="all">
             <h1>All Characters</h1>
@@ -144,12 +163,12 @@ export const HomePage = () => {
           <TabsContent value="heroes">
             {/* Show hero characters */}
             <h1>Heroes</h1>
-            <HeroGrid heroes={[]} />
+            <HeroGrid heroes={heroesResponse?.heroes ?? []} />
           </TabsContent>
           <TabsContent value="villains">
             {/* Show villain characters */}
             <h1>Villains</h1>
-            <HeroGrid heroes={[]} />
+            <HeroGrid heroes={heroesResponse?.heroes ?? []}  />
           </TabsContent>
         </Tabs>
 
@@ -161,5 +180,5 @@ export const HomePage = () => {
 
       </>
     </>
-  )
-}
+  );
+};

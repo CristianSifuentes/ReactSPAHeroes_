@@ -6,5 +6,5 @@ export const AdminLayout = () => {
     <div className="bg-indigo-500">
       <Outlet />
     </div>
-  )
-}
+  );
+};

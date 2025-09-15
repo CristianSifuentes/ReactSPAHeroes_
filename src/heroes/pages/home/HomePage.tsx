@@ -22,6 +22,10 @@
 // import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 // import { Progress } from "@/components/ui/progress"
 import { use, useMemo, useState } from "react"
+//useState is a React Hook that allows you to add a state variable to your component.
+//useMemo is a React Hook that allows you to cache the result of a calculation between renders.
+//use is a React API that allows you to read the value of a resource such as a Promise or context.
+
 import  { useSearchParams } from "react-router"
 import { useQuery } from "@tanstack/react-query"
 
@@ -58,7 +62,7 @@ export const HomePage = () => {
   const validTabs = ['all', 'favorites', 'heroes', 'villains'];
   return validTabs.includes(activeTab) ? activeTab : 'all';
 
-   }, [searchParams]);
+  }, [activeTab]);
   // console.log({ searchParams });
   // console.log(searchParams.get('page'));
   // console.log(searchParams.get('offset'));
@@ -93,7 +97,7 @@ export const HomePage = () => {
   //   staleTime: 1000 * 60 * 5, // 5 minutes
   // });
 
-  const { data: heroesResponse } = usePaginatedHero(+page, +limit);
+  const { data: heroesResponse } = usePaginatedHero(+page, +limit, category);
 
   const { data: summary } = useHeroSummary();
 
@@ -117,7 +121,7 @@ export const HomePage = () => {
         <HeroStats />
 
         {/* Controls */}
-        <SearchControls></SearchControls>
+        {/* <SearchControls></SearchControls> */}
 
 
 

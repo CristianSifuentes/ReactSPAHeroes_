@@ -18,11 +18,13 @@ export const SearchPage = () => {
            { label: 'Home3', to: '/' },
          ]}/>
 
+      {/* Stats Dashboard */}
       <HeroStats />
 
+      {/* Filter and search */}
       <SearchControls />
     </>
-  )
-}
+  );
+};
 
-export default SearchPage
+export default SearchPage;

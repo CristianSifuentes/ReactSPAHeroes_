@@ -2,12 +2,12 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Heart } from 'lucide-react'
 import type { PropsWithChildren } from 'react'
 
-interface HeroStatCardProps extends PropsWithChildren {
-  title: string
-  icon: React.ReactNode
+interface Props extends PropsWithChildren {
+  title: string;
+  icon: React.ReactNode;
 }
 
-export const HeroStatCard = ({ title, icon, children }: HeroStatCardProps) => {
+export const HeroStatCard = ({ title, icon, children }: Props) => {
   return (
     <>
         <Card>

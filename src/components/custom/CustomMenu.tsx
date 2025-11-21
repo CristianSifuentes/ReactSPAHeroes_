@@ -22,7 +22,7 @@ export const CustomMenu = () => {
             asChild
             className={cn(isActive('/') && 'bg-slate-200', 'p-2 rounded-md')}
           >
-            <Link to="/">Inicio</Link>
+            <Link to="/">Start</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
 
@@ -35,7 +35,7 @@ export const CustomMenu = () => {
               'p-2 rounded-md'
             )}
           >
-            <Link to="/search">Buscar superhéroes</Link>
+            <Link to="/search">Search superheroes</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>
